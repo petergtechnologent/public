@@ -4,6 +4,8 @@
   gather_facts: true
   become: true
   tasks:
-    - name: Pause this for time
-      pause:
-        minutes: 30
+    - name: Make file
+      copy:
+        path: /tmp/lookatme
+        content: |
+          {{ morpheus[instance] }}
